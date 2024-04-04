@@ -29,6 +29,7 @@ class MyApp extends StatelessWidget {
       ),
       home: Scaffold(
         appBar: AppBar(
+          scrolledUnderElevation: 0, //스크롤할때 0으로 하면 색깔 변경 안됨
           title: Container(
             child: Row(
               children: [

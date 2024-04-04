@@ -16,62 +16,60 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(
           brightness: Brightness.dark,
-          seedColor: Color(0xFF0F0F0F),
+          seedColor: const Color(0xFF0F0F0F),
         ),
-        bottomAppBarTheme: BottomAppBarTheme(
+        bottomAppBarTheme: const BottomAppBarTheme(
           color: Color(0xFF0F0F0F),
         ),
         scaffoldBackgroundColor: const Color(0xFF0F0F0F),
-        appBarTheme: AppBarTheme(
-          backgroundColor: const Color(0xFF0F0F0F),
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Color(0xFF0F0F0F),
           centerTitle: false,
         ),
       ),
       home: Scaffold(
         appBar: AppBar(
           scrolledUnderElevation: 0, //스크롤할때 0으로 하면 색깔 변경 안됨
-          title: Container(
-            child: Row(
-              children: [
-                Image.asset(
-                  'assets/images/youtube_logo.png',
-                  width: 86,
-                ),
-                Spacer(),
-                Icon(
-                  Icons.cast,
-                  color: Colors.white,
-                ),
-                SizedBox(width: 18),
-                Icon(
-                  Icons.notifications_none,
-                  color: Colors.white,
-                ),
-                SizedBox(width: 18),
-                Icon(
-                  Icons.search,
-                  color: Colors.white,
-                ),
-                SizedBox(width: 18),
-                ClipOval(
-                  //동그랗게만 만들어주는거임
-                  child: Container(
-                    width: 24,
-                    height: 24,
-                    color: const Color(0XFFF5F5F5),
-                    child: const Icon(
-                      Icons.person_3,
-                      size: 16,
-                      color: Color(0XFFD1D5DB),
-                    ),
+          title: Row(
+            children: [
+              Image.asset(
+                'assets/images/youtube_logo.png',
+                width: 86,
+              ),
+              const Spacer(),
+              const Icon(
+                Icons.cast,
+                color: Colors.white,
+              ),
+              const SizedBox(width: 18),
+              const Icon(
+                Icons.notifications_none,
+                color: Colors.white,
+              ),
+              const SizedBox(width: 18),
+              const Icon(
+                Icons.search,
+                color: Colors.white,
+              ),
+              const SizedBox(width: 18),
+              ClipOval(
+                //동그랗게만 만들어주는거임
+                child: Container(
+                  width: 24,
+                  height: 24,
+                  color: const Color(0XFFF5F5F5),
+                  child: const Icon(
+                    Icons.person_3,
+                    size: 16,
+                    color: Color(0XFFD1D5DB),
                   ),
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
         body: SingleChildScrollView(
-          child: Container(
+          child: SizedBox(
             width: double.infinity,
             child: Column(
               children: [
@@ -88,9 +86,9 @@ class MyApp extends StatelessWidget {
                         width: 40,
                         height: 32,
                         decoration: BoxDecoration(
-                            color: Color(0xFF272727),
+                            color: const Color(0xFF272727),
                             borderRadius: BorderRadius.circular(4)),
-                        child: Icon(
+                        child: const Icon(
                           Icons.explore_outlined,
                           size: 24,
                         ),
@@ -99,9 +97,9 @@ class MyApp extends StatelessWidget {
                         width: 40,
                         height: 32,
                         decoration: BoxDecoration(
-                            color: Color(0xFF272727),
+                            color: const Color(0xFF272727),
                             borderRadius: BorderRadius.circular(4)),
-                        child: Align(
+                        child: const Align(
                           alignment: Alignment.center,
                           child: Text(
                             'All',
@@ -114,9 +112,9 @@ class MyApp extends StatelessWidget {
                         width: 108,
                         height: 32,
                         decoration: BoxDecoration(
-                            color: Color(0xFF272727),
+                            color: const Color(0xFF272727),
                             borderRadius: BorderRadius.circular(4)),
-                        child: Align(
+                        child: const Align(
                           alignment: Alignment.center,
                           child: Text(
                             'Under 10 min',
@@ -129,9 +127,9 @@ class MyApp extends StatelessWidget {
                         width: 62,
                         height: 32,
                         decoration: BoxDecoration(
-                            color: Color(0xFF272727),
+                            color: const Color(0xFF272727),
                             borderRadius: BorderRadius.circular(4)),
-                        child: Align(
+                        child: const Align(
                           alignment: Alignment.center,
                           child: Text(
                             'Music',
@@ -144,9 +142,9 @@ class MyApp extends StatelessWidget {
                         width: 68,
                         height: 32,
                         decoration: BoxDecoration(
-                            color: Color(0xFF272727),
+                            color: const Color(0xFF272727),
                             borderRadius: BorderRadius.circular(8)),
-                        child: Align(
+                        child: const Align(
                           alignment: Alignment.center,
                           child: Text(
                             'Manga',
@@ -158,206 +156,202 @@ class MyApp extends StatelessWidget {
                     ],
                   ),
                 ),
-                Container(
-                  child: Column(
-                    children: [
-                      Stack(
-                        children: [
-                          Container(
-                            width: double.infinity,
-                            height: 210,
-                            child: Image.network(
-                              'https://post-phinf.pstatic.net/MjAyMTA2MTRfMjc4/MDAxNjIzNjY1MDU2MDg2.WMMx-rU9xp3Jx7w4v7H5IHgIVcMgCf55wl-ipn9_1Xwg.2I2EwHiLlG5zNkuE6cyqW6TehOqdrmkWxE3gjDFIqcgg.JPEG/%EB%B9%85%EC%84%9C%28%EA%B7%B8%EB%9E%98%ED%94%BD%29-%EB%9D%BC%EC%9D%B4%ED%8A%B8.jpg?type=w1200',
-                              fit: BoxFit.cover,
+                Column(
+                  children: [
+                    Stack(
+                      children: [
+                        SizedBox(
+                          width: double.infinity,
+                          height: 210,
+                          child: Image.network(
+                            'https://post-phinf.pstatic.net/MjAyMTA2MTRfMjc4/MDAxNjIzNjY1MDU2MDg2.WMMx-rU9xp3Jx7w4v7H5IHgIVcMgCf55wl-ipn9_1Xwg.2I2EwHiLlG5zNkuE6cyqW6TehOqdrmkWxE3gjDFIqcgg.JPEG/%EB%B9%85%EC%84%9C%28%EA%B7%B8%EB%9E%98%ED%94%BD%29-%EB%9D%BC%EC%9D%B4%ED%8A%B8.jpg?type=w1200',
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                        Positioned(
+                          //fixed같은 친구
+                          bottom: 8,
+                          right: 8,
+                          child: Container(
+                            decoration: ShapeDecoration(
+                              color: const Color(0xCC0F0F0F),
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(4)),
+                            ),
+                            child: const Padding(
+                              padding: EdgeInsets.only(
+                                left: 8,
+                                right: 8,
+                                top: 4,
+                                bottom: 4,
+                              ),
+                              child: Text(
+                                '12:40',
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
                             ),
                           ),
-                          Positioned(
-                            //fixed같은 친구
-                            bottom: 8,
-                            right: 8,
+                        )
+                      ],
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(
+                          top: 12, bottom: 24, left: 12, right: 8),
+                      child: Row(
+                        children: [
+                          ClipOval(
+                            //동그랗게만 만들어주는거임
                             child: Container(
-                              decoration: ShapeDecoration(
-                                color: Color(0xCC0F0F0F),
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(4)),
+                              width: 28,
+                              height: 28,
+                              color: const Color(0XFFF5F5F5),
+                              child: const Icon(
+                                Icons.person_3,
+                                size: 20,
+                                color: Color(0XFFD1D5DB),
                               ),
-                              child: Padding(
-                                padding: const EdgeInsets.only(
-                                  left: 8,
-                                  right: 8,
-                                  top: 4,
-                                  bottom: 4,
-                                ),
+                            ),
+                          ),
+                          const SizedBox(
+                            width: 10,
+                          ),
+                          const Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              SizedBox(
+                                width: 276,
                                 child: Text(
-                                  '12:40',
-                                  textAlign: TextAlign.center,
+                                  'Config 2022 Opening Keynote - Dylan Field',
                                   style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          )
-                        ],
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(
-                            top: 12, bottom: 24, left: 12, right: 8),
-                        child: Row(
-                          children: [
-                            ClipOval(
-                              //동그랗게만 만들어주는거임
-                              child: Container(
-                                width: 28,
-                                height: 28,
-                                color: const Color(0XFFF5F5F5),
-                                child: const Icon(
-                                  Icons.person_3,
-                                  size: 20,
-                                  color: Color(0XFFD1D5DB),
-                                ),
-                              ),
-                            ),
-                            SizedBox(
-                              width: 10,
-                            ),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                SizedBox(
-                                  width: 276,
-                                  child: Text(
-                                    'Config 2022 Opening Keynote - Dylan Field',
-                                    style: TextStyle(
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.w400),
-                                  ),
-                                ),
-                                Text(
-                                  'Figma · 437K views ·7 days ago',
-                                  style: TextStyle(
-                                      fontSize: 12,
+                                      fontSize: 16,
                                       fontWeight: FontWeight.w400),
                                 ),
-                              ],
-                            ),
-                            Spacer(),
-                            Icon(
-                              Icons.more_vert,
-                              size: 16,
-                            ),
-                          ],
-                        ),
+                              ),
+                              Text(
+                                'Figma · 437K views ·7 days ago',
+                                style: TextStyle(
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.w400),
+                              ),
+                            ],
+                          ),
+                          const Spacer(),
+                          const Icon(
+                            Icons.more_vert,
+                            size: 16,
+                          ),
+                        ],
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
-                Container(
-                  child: Column(
-                    children: [
-                      Stack(
-                        children: [
-                          Container(
-                            width: double.infinity,
-                            height: 210,
-                            child: Image.network(
-                              'https://www.shutterstock.com/image-illustration/abstract-geometric-fluid-red-orange-600nw-1416337598.jpg',
-                              fit: BoxFit.cover,
+                Column(
+                  children: [
+                    Stack(
+                      children: [
+                        SizedBox(
+                          width: double.infinity,
+                          height: 210,
+                          child: Image.network(
+                            'https://www.shutterstock.com/image-illustration/abstract-geometric-fluid-red-orange-600nw-1416337598.jpg',
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                        Positioned(
+                          //fixed같은 친구
+                          bottom: 8,
+                          right: 8,
+                          child: Container(
+                            decoration: ShapeDecoration(
+                              color: const Color(0xCC0F0F0F),
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(4)),
+                            ),
+                            child: const Padding(
+                              padding: EdgeInsets.only(
+                                left: 8,
+                                right: 8,
+                                top: 4,
+                                bottom: 4,
+                              ),
+                              child: Text(
+                                '12:40',
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
                             ),
                           ),
-                          Positioned(
-                            //fixed같은 친구
-                            bottom: 8,
-                            right: 8,
+                        )
+                      ],
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(
+                          top: 12, bottom: 24, left: 12, right: 8),
+                      child: Row(
+                        children: [
+                          ClipOval(
+                            //동그랗게만 만들어주는거임
                             child: Container(
-                              decoration: ShapeDecoration(
-                                color: Color(0xCC0F0F0F),
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(4)),
+                              width: 28,
+                              height: 28,
+                              color: const Color(0XFFF5F5F5),
+                              child: const Icon(
+                                Icons.person_3,
+                                size: 20,
+                                color: Color(0XFFD1D5DB),
                               ),
-                              child: Padding(
-                                padding: const EdgeInsets.only(
-                                  left: 8,
-                                  right: 8,
-                                  top: 4,
-                                  bottom: 4,
-                                ),
+                            ),
+                          ),
+                          const SizedBox(
+                            width: 10,
+                          ),
+                          const Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              SizedBox(
+                                width: 276,
                                 child: Text(
-                                  '12:40',
-                                  textAlign: TextAlign.center,
+                                  'Config 2022 Opening Keynote - Dylan Field',
                                   style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          )
-                        ],
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(
-                            top: 12, bottom: 24, left: 12, right: 8),
-                        child: Row(
-                          children: [
-                            ClipOval(
-                              //동그랗게만 만들어주는거임
-                              child: Container(
-                                width: 28,
-                                height: 28,
-                                color: const Color(0XFFF5F5F5),
-                                child: const Icon(
-                                  Icons.person_3,
-                                  size: 20,
-                                  color: Color(0XFFD1D5DB),
-                                ),
-                              ),
-                            ),
-                            SizedBox(
-                              width: 10,
-                            ),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                SizedBox(
-                                  width: 276,
-                                  child: Text(
-                                    'Config 2022 Opening Keynote - Dylan Field',
-                                    style: TextStyle(
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.w400),
-                                  ),
-                                ),
-                                Text(
-                                  'Figma · 437K views ·7 days ago',
-                                  style: TextStyle(
-                                      fontSize: 12,
+                                      fontSize: 16,
                                       fontWeight: FontWeight.w400),
                                 ),
-                              ],
-                            ),
-                            Spacer(),
-                            Icon(
-                              Icons.more_vert,
-                              size: 16,
-                            ),
-                          ],
-                        ),
+                              ),
+                              Text(
+                                'Figma · 437K views ·7 days ago',
+                                style: TextStyle(
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.w400),
+                              ),
+                            ],
+                          ),
+                          const Spacer(),
+                          const Icon(
+                            Icons.more_vert,
+                            size: 16,
+                          ),
+                        ],
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
                 Padding(
                   padding: const EdgeInsets.only(left: 8),
                   child: Container(
                     alignment: Alignment.centerLeft,
+                    height: 40,
                     child: Image.asset(
                       'assets/images/shorts_logo.png',
                     ),
-                    height: 40,
                   ),
                 ),
                 Padding(
@@ -378,55 +372,51 @@ class MyApp extends StatelessWidget {
                           child: Stack(
                             children: [
                               Positioned(
-                                child: Container(
+                                child: SizedBox(
                                   width: 158,
                                   height: 264,
                                   child: Image.network('https://svrforum.com/files/attach/images/2023/02/18/f6ec90cea8e62801442419e90b870dbf.jpg', fit: BoxFit.cover,),
                                 ),
                               ),
-                              Positioned(
+                              const Positioned(
                                 right: 4,
                                 top: 8,
                                 child: Stack(
                                   children: [
-                                    Container(
-                                      child: Icon(Icons.more_vert, size: 16,),
-                                    ),
+                                    Icon(Icons.more_vert, size: 16,),
                                   ],
                                 ),
                               ),
-                              Container(
-                                child: Positioned(
-                                  bottom: 0,
-                                  child: Padding(
-                                    padding: const EdgeInsets.only(bottom: 10),
-                                    child: Container(
-                                      padding: const EdgeInsets.all(8),
-                                      child: Column(
-                                        mainAxisSize: MainAxisSize.min,
-                                        mainAxisAlignment: MainAxisAlignment.center,
-                                        crossAxisAlignment: CrossAxisAlignment.start,
-                                        children: [
-                                          SizedBox(
-                                            child: Text(
-                                              'Config 2022',
-                                              style: TextStyle(
-                                                color: Colors.white,
-                                                fontSize: 14,
-                                                fontWeight: FontWeight.w400,
-                                              ),
-                                            ),
-                                          ),
-                                          Text(
-                                            '166K Views',
+                              Positioned(
+                                bottom: 0,
+                                child: Padding(
+                                  padding: const EdgeInsets.only(bottom: 10),
+                                  child: Container(
+                                    padding: const EdgeInsets.all(8),
+                                    child: const Column(
+                                      mainAxisSize: MainAxisSize.min,
+                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        SizedBox(
+                                          child: Text(
+                                            'Config 2022',
                                             style: TextStyle(
                                               color: Colors.white,
-                                              fontSize: 12,
+                                              fontSize: 14,
                                               fontWeight: FontWeight.w400,
                                             ),
                                           ),
-                                        ],
-                                      ),
+                                        ),
+                                        Text(
+                                          '166K Views',
+                                          style: TextStyle(
+                                            color: Colors.white,
+                                            fontSize: 12,
+                                            fontWeight: FontWeight.w400,
+                                          ),
+                                        ),
+                                      ],
                                     ),
                                   ),
                                 ),
@@ -434,7 +424,7 @@ class MyApp extends StatelessWidget {
                             ],
                           ),
                         ),
-                        SizedBox(width: 12,),
+                        const SizedBox(width: 12,),
                         Container(
                           width: 158,
                           height: 264,
@@ -455,49 +445,45 @@ class MyApp extends StatelessWidget {
                                   child: Image.network('https://e1.pxfuel.com/desktop-wallpaper/917/349/desktop-wallpaper-macos-monterey-mac-os.jpg', fit: BoxFit.cover,),
                                 ),
                               ),
-                              Positioned(
+                              const Positioned(
                                 right: 4,
                                 top: 8,
                                 child: Stack(
                                   children: [
-                                    Container(
-                                      child: Icon(Icons.more_vert, size: 16,),
-                                    ),
+                                    Icon(Icons.more_vert, size: 16,),
                                   ],
                                 ),
                               ),
-                              Container(
-                                child: Positioned(
-                                  bottom: 0,
-                                  child: Padding(
-                                    padding: const EdgeInsets.only(bottom: 10),
-                                    child: Container(
-                                      padding: const EdgeInsets.all(8),
-                                      child: Column(
-                                        mainAxisSize: MainAxisSize.min,
-                                        mainAxisAlignment: MainAxisAlignment.center,
-                                        crossAxisAlignment: CrossAxisAlignment.start,
-                                        children: [
-                                          SizedBox(
-                                            child: Text(
-                                              'Config 2022',
-                                              style: TextStyle(
-                                                color: Colors.white,
-                                                fontSize: 14,
-                                                fontWeight: FontWeight.w400,
-                                              ),
-                                            ),
-                                          ),
-                                          Text(
-                                            '166K Views',
+                              Positioned(
+                                bottom: 0,
+                                child: Padding(
+                                  padding: const EdgeInsets.only(bottom: 10),
+                                  child: Container(
+                                    padding: const EdgeInsets.all(8),
+                                    child: const Column(
+                                      mainAxisSize: MainAxisSize.min,
+                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        SizedBox(
+                                          child: Text(
+                                            'Config 2022',
                                             style: TextStyle(
                                               color: Colors.white,
-                                              fontSize: 12,
+                                              fontSize: 14,
                                               fontWeight: FontWeight.w400,
                                             ),
                                           ),
-                                        ],
-                                      ),
+                                        ),
+                                        Text(
+                                          '166K Views',
+                                          style: TextStyle(
+                                            color: Colors.white,
+                                            fontSize: 12,
+                                            fontWeight: FontWeight.w400,
+                                          ),
+                                        ),
+                                      ],
                                     ),
                                   ),
                                 ),
@@ -505,7 +491,7 @@ class MyApp extends StatelessWidget {
                             ],
                           ),
                         ),
-                        SizedBox(width: 12,),
+                        const SizedBox(width: 12,),
                         Container(
                           width: 158,
                           height: 264,
@@ -526,49 +512,45 @@ class MyApp extends StatelessWidget {
                                   child: Image.network('https://images.saymedia-content.com/.image/ar_3:2%2Cc_limit%2Ccs_srgb%2Cfl_progressive%2Cq_auto:eco%2Cw_700/MTkyNjYzMTEwNjU4Njk2NjI4/aesthetic-mac-wallpapers.jpg', fit: BoxFit.cover,),
                                 ),
                               ),
-                              Positioned(
+                              const Positioned(
                                 right: 4,
                                 top: 8,
                                 child: Stack(
                                   children: [
-                                    Container(
-                                      child: Icon(Icons.more_vert, size: 16,),
-                                    ),
+                                    Icon(Icons.more_vert, size: 16,),
                                   ],
                                 ),
                               ),
-                              Container(
-                                child: Positioned(
-                                  bottom: 0,
-                                  child: Padding(
-                                    padding: const EdgeInsets.only(bottom: 10),
-                                    child: Container(
-                                      padding: const EdgeInsets.all(8),
-                                      child: Column(
-                                        mainAxisSize: MainAxisSize.min,
-                                        mainAxisAlignment: MainAxisAlignment.center,
-                                        crossAxisAlignment: CrossAxisAlignment.start,
-                                        children: [
-                                          SizedBox(
-                                            child: Text(
-                                              'Config 2022',
-                                              style: TextStyle(
-                                                color: Colors.white,
-                                                fontSize: 14,
-                                                fontWeight: FontWeight.w400,
-                                              ),
-                                            ),
-                                          ),
-                                          Text(
-                                            '166K Views',
+                              Positioned(
+                                bottom: 0,
+                                child: Padding(
+                                  padding: const EdgeInsets.only(bottom: 10),
+                                  child: Container(
+                                    padding: const EdgeInsets.all(8),
+                                    child: const Column(
+                                      mainAxisSize: MainAxisSize.min,
+                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        SizedBox(
+                                          child: Text(
+                                            'Config 2022',
                                             style: TextStyle(
                                               color: Colors.white,
-                                              fontSize: 12,
+                                              fontSize: 14,
                                               fontWeight: FontWeight.w400,
                                             ),
                                           ),
-                                        ],
-                                      ),
+                                        ),
+                                        Text(
+                                          '166K Views',
+                                          style: TextStyle(
+                                            color: Colors.white,
+                                            fontSize: 12,
+                                            fontWeight: FontWeight.w400,
+                                          ),
+                                        ),
+                                      ],
                                     ),
                                   ),
                                 ),
@@ -576,7 +558,7 @@ class MyApp extends StatelessWidget {
                             ],
                           ),
                         ),
-                        SizedBox(width: 12,),
+                        const SizedBox(width: 12,),
                         Container(
                           width: 158,
                           height: 264,
@@ -591,7 +573,7 @@ class MyApp extends StatelessWidget {
                               Positioned(
                                 left: 0,
                                 top: 0,
-                                child: Container(
+                                child: SizedBox(
                                   width: 158,
                                   height: 264,
                                   child: Image.network('https://e0.pxfuel.com/wallpapers/643/378/desktop-wallpaper-colorful-waves-flow-for-macbook-pro.jpg', fit: BoxFit.cover,),
@@ -603,43 +585,41 @@ class MyApp extends StatelessWidget {
                                 child: Stack(
                                   children: [
                                     Container(
-                                      child: Icon(Icons.more_vert, size: 16,),
+                                      child: const Icon(Icons.more_vert, size: 16,),
                                     ),
                                   ],
                                 ),
                               ),
-                              Container(
-                                child: Positioned(
-                                  bottom: 0,
-                                  child: Padding(
-                                    padding: const EdgeInsets.only(bottom: 10),
-                                    child: Container(
-                                      padding: const EdgeInsets.all(8),
-                                      child: Column(
-                                        mainAxisSize: MainAxisSize.min,
-                                        mainAxisAlignment: MainAxisAlignment.center,
-                                        crossAxisAlignment: CrossAxisAlignment.start,
-                                        children: [
-                                          SizedBox(
-                                            child: Text(
-                                              'Config 2022',
-                                              style: TextStyle(
-                                                color: Colors.white,
-                                                fontSize: 14,
-                                                fontWeight: FontWeight.w400,
-                                              ),
-                                            ),
-                                          ),
-                                          Text(
-                                            '166K Views',
+                              Positioned(
+                                bottom: 0,
+                                child: Padding(
+                                  padding: const EdgeInsets.only(bottom: 10),
+                                  child: Container(
+                                    padding: const EdgeInsets.all(8),
+                                    child: const Column(
+                                      mainAxisSize: MainAxisSize.min,
+                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        SizedBox(
+                                          child: Text(
+                                            'Config 2022',
                                             style: TextStyle(
                                               color: Colors.white,
-                                              fontSize: 12,
+                                              fontSize: 14,
                                               fontWeight: FontWeight.w400,
                                             ),
                                           ),
-                                        ],
-                                      ),
+                                        ),
+                                        Text(
+                                          '166K Views',
+                                          style: TextStyle(
+                                            color: Colors.white,
+                                            fontSize: 12,
+                                            fontWeight: FontWeight.w400,
+                                          ),
+                                        ),
+                                      ],
                                     ),
                                   ),
                                 ),
@@ -651,102 +631,100 @@ class MyApp extends StatelessWidget {
                     ),
                   ),
                 ),
-                SizedBox(height: 24,),
-                Container(
-                  child: Column(
-                    children: [
-                      Stack(
-                        children: [
-                          Container(
-                            width: double.infinity,
-                            height: 210,
-                            child: Image.network(
-                              'https://e0.pxfuel.com/wallpapers/643/378/desktop-wallpaper-colorful-waves-flow-for-macbook-pro.jpg',
-                              fit: BoxFit.cover,
+                const SizedBox(height: 24,),
+                Column(
+                  children: [
+                    Stack(
+                      children: [
+                        SizedBox(
+                          width: double.infinity,
+                          height: 210,
+                          child: Image.network(
+                            'https://e0.pxfuel.com/wallpapers/643/378/desktop-wallpaper-colorful-waves-flow-for-macbook-pro.jpg',
+                            fit: BoxFit.cover,
+                          ),
+                        ),
+                        Positioned(
+                          //fixed같은 친구
+                          bottom: 8,
+                          right: 8,
+                          child: Container(
+                            decoration: ShapeDecoration(
+                              color: const Color(0xCC0F0F0F),
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(4)),
+                            ),
+                            child: const Padding(
+                              padding: EdgeInsets.only(
+                                left: 8,
+                                right: 8,
+                                top: 4,
+                                bottom: 4,
+                              ),
+                              child: Text(
+                                '12:40',
+                                textAlign: TextAlign.center,
+                                style: TextStyle(
+                                  color: Colors.white,
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
                             ),
                           ),
-                          Positioned(
-                            //fixed같은 친구
-                            bottom: 8,
-                            right: 8,
+                        )
+                      ],
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.only(
+                          top: 12, bottom: 24, left: 12, right: 8),
+                      child: Row(
+                        children: [
+                          ClipOval(
+                            //동그랗게만 만들어주는거임
                             child: Container(
-                              decoration: ShapeDecoration(
-                                color: Color(0xCC0F0F0F),
-                                shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(4)),
+                              width: 28,
+                              height: 28,
+                              color: const Color(0XFFF5F5F5),
+                              child: const Icon(
+                                Icons.person_3,
+                                size: 20,
+                                color: Color(0XFFD1D5DB),
                               ),
-                              child: Padding(
-                                padding: const EdgeInsets.only(
-                                  left: 8,
-                                  right: 8,
-                                  top: 4,
-                                  bottom: 4,
-                                ),
+                            ),
+                          ),
+                          const SizedBox(
+                            width: 10,
+                          ),
+                          const Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              SizedBox(
+                                width: 276,
                                 child: Text(
-                                  '12:40',
-                                  textAlign: TextAlign.center,
+                                  'Config 2022 Opening Keynote - Dylan Field',
                                   style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 12,
-                                    fontWeight: FontWeight.w500,
-                                  ),
-                                ),
-                              ),
-                            ),
-                          )
-                        ],
-                      ),
-                      Padding(
-                        padding: const EdgeInsets.only(
-                            top: 12, bottom: 24, left: 12, right: 8),
-                        child: Row(
-                          children: [
-                            ClipOval(
-                              //동그랗게만 만들어주는거임
-                              child: Container(
-                                width: 28,
-                                height: 28,
-                                color: const Color(0XFFF5F5F5),
-                                child: const Icon(
-                                  Icons.person_3,
-                                  size: 20,
-                                  color: Color(0XFFD1D5DB),
-                                ),
-                              ),
-                            ),
-                            SizedBox(
-                              width: 10,
-                            ),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                SizedBox(
-                                  width: 276,
-                                  child: Text(
-                                    'Config 2022 Opening Keynote - Dylan Field',
-                                    style: TextStyle(
-                                        fontSize: 16,
-                                        fontWeight: FontWeight.w400),
-                                  ),
-                                ),
-                                Text(
-                                  'Figma · 437K views ·7 days ago',
-                                  style: TextStyle(
-                                      fontSize: 12,
+                                      fontSize: 16,
                                       fontWeight: FontWeight.w400),
                                 ),
-                              ],
-                            ),
-                            Spacer(),
-                            Icon(
-                              Icons.more_vert,
-                              size: 16,
-                            ),
-                          ],
-                        ),
+                              ),
+                              Text(
+                                'Figma · 437K views ·7 days ago',
+                                style: TextStyle(
+                                    fontSize: 12,
+                                    fontWeight: FontWeight.w400),
+                              ),
+                            ],
+                          ),
+                          const Spacer(),
+                          const Icon(
+                            Icons.more_vert,
+                            size: 16,
+                          ),
+                        ],
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
               ],
             ),
@@ -755,7 +733,7 @@ class MyApp extends StatelessWidget {
 
         bottomNavigationBar: BottomAppBar(
           elevation: 0,
-          child: Container(
+          child: SizedBox(
             height: 48.0,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -763,7 +741,7 @@ class MyApp extends StatelessWidget {
                 Expanded(
                   flex: 1,
                   child: IconButton(
-                    icon: Column(
+                    icon: const Column(
                       children: [
                         Icon(
                           Icons.home_filled,
@@ -781,7 +759,7 @@ class MyApp extends StatelessWidget {
                 Expanded(
                   flex: 1,
                   child: IconButton(
-                    icon: Column(
+                    icon: const Column(
                       children: [
                         Icon(
                           Icons.play_circle_outline,
@@ -799,7 +777,7 @@ class MyApp extends StatelessWidget {
                 Expanded(
                   flex: 1,
                   child: IconButton(
-                    icon: Icon(
+                    icon: const Icon(
                       Icons.add_circle_outline,
                       color: Colors.white,
                       size: 38,
@@ -810,7 +788,7 @@ class MyApp extends StatelessWidget {
                 Expanded(
                   flex: 1,
                   child: IconButton(
-                    icon: Column(
+                    icon: const Column(
                       children: [
                         Icon(
                           Icons.subscriptions_outlined,
@@ -828,7 +806,7 @@ class MyApp extends StatelessWidget {
                 Expanded(
                   flex: 1,
                   child: IconButton(
-                    icon: Column(
+                    icon: const Column(
                       children: [
                         Icon(
                           Icons.video_library_outlined,
